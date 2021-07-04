@@ -57,6 +57,11 @@ async def pause(_, message: Message):
         callsmusic.pause(chat_id)
         await message.reply_text("▶️ Paused!")
 
+@Client.on_message(filters.command("restartmusic") & filters.user(SUDO_USERS))
+async def restart(c: Client, m: Message):
+    await m.reply_text("Restarting...")
+    args = [sys.executable, "-m", "DaisyXMusic"]
+    os.execl(sys.executable, *args)
 
 @Client.on_message(command("resume") & other_filters)
 @errors
