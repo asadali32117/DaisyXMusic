@@ -3,7 +3,7 @@ import os
 import requests
 import aiohttp
 import youtube_dl
-
+from pyrogram import Client
 from DaisyXMusic.config import API_HASH
 from DaisyXMusic.config import API_ID
 from DaisyXMusic.config import BOT_TOKEN
