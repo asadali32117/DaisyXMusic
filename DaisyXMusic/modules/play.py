@@ -625,9 +625,7 @@ async def play(_, message: Message):
             query += " " + str(i)
         print(query)
         await lel.edit("**Searching...**")
-        ydl_opts = {"format": "bestaudio[ext=m4a]"}
-        
-        try:
+        ydl_opts = {"format": "bestaudio[ext=m4a]" 
           results = YoutubeSearch(query, max_results=1).to_dict()
         except:
           await lel.edit("Give me something to play")
