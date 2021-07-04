@@ -630,6 +630,25 @@ async def play(_, message: Message):
         except:
           await lel.edit("Give me something to play")
         # Looks like hell. Aren't it?? FUCK OFF
+          try:
+            results = YoutubeSearch(query, max_results=1).to_dict()
+            url = f"https://youtube.com{results[0]['url_suffix']}"
+            # print(results)
+            title = results[0]["title"][:40]
+            thumbnail = results[0]["thumbnails"][0]
+            thumb_name = f"thumb{title}.jpg"
+            thumb = requests.get(thumbnail, allow_redirects=True)
+            open(thumb_name, "wb").write(thumb.content)
+            duration = results[0]["duration"]
+            results[0]["url_suffix"]
+            views = results[0]["views"]
+
+        except Exception as e:
+            await lel.edit(
+                "Song not found.Try another song or maybe spell it properly."
+            )
+            print(str(e))
+            return 
             try:    
                 secmul, dur, dur_arr = 1, 0, duration.split(':')
                 for i in range(len(dur_arr)-1, -1, -1):
