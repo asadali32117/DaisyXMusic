@@ -465,7 +465,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "IGRISMUSIC"
+        user.first_name = "@IGRISMUSIC"
     usar = user
     wew = usar.id
     try:
@@ -611,7 +611,7 @@ async def play(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(text="YouTube", url=f"{url}"),
-                    InlineKeyboardButton(text="Download", url=f"{dlurl}"),
+                    InlineKeyboardButton(text="Support", url=f"https://t.me/IGRISBOTSUPPORT"),
                 ],
                 [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
             ]
@@ -704,7 +704,7 @@ async def play(_, message: Message):
                     ],
                     [
                         InlineKeyboardButton(text="YouTube", url=f"{url}"),
-                        InlineKeyboardButton(text="Download", url=f"{dlurl}"),
+                        InlineKeyboardButton(text="Support", url=f"https://t.me/IGRISBOTSUPPORT"),
                     ],
                     [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
                 ]
@@ -765,7 +765,7 @@ async def ytplay(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "helper"
+        user.first_name = "IGRISMUSIC"
     usar = user
     wew = usar.id
     try:
@@ -793,7 +793,7 @@ async def ytplay(_, message: Message):
                         message.chat.id, "I joined this group for playing music in VC"
                     )
                     await lel.edit(
-                        "<b>helper userbot joined your chat</b>",
+                        "<b>@IGRISMUSIC joined your chat</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -862,7 +862,7 @@ async def ytplay(_, message: Message):
             ],
             [
                 InlineKeyboardButton(text="YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Download", url=f"{dlurl}"),
+                InlineKeyboardButton(text="Support", url=f"https://t.me/IGRISBOTSUPPORT"),
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
@@ -921,7 +921,7 @@ async def deezer(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "IGRISMUSIC"
+        user.first_name = "@IGRISMUSIC"
     usar = user
     wew = usar.id
     try:
@@ -949,7 +949,7 @@ async def deezer(client: Client, message_: Message):
                         message_.chat.id, "I joined this group for playing music in VC"
                     )
                     await lel.edit(
-                        "<b>helper userbot joined your chat</b>",
+                        "<b>@IGRISMUSIC joined your chat</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -965,7 +965,7 @@ async def deezer(client: Client, message_: Message):
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} Userbot not in this chat, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
+            f"<i> {user.first_name} not in this chat, Ask admin to send /playm command for first time or add {user.first_name} manually</i>"
         )
         return
     requested_by = message_.from_user.first_name
@@ -987,7 +987,7 @@ async def deezer(client: Client, message_: Message):
         thumbnail = "https://telegra.ph/file/f6086f8909fbfeb0844f2.png"
 
     except:
-        await res.edit("Found Literally Nothing, You Should Work On Your English!")
+        await res.edit("Found Literally Nothing!")
         return
     try:    
         duuration= round(duration / 60)
@@ -1059,7 +1059,7 @@ async def jiosaavn(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "IGRISMUSIC"
+        user.first_name = "@IGRISMUSIC"
     usar = user
     wew = usar.id
     try:
@@ -1087,7 +1087,7 @@ async def jiosaavn(client: Client, message_: Message):
                         message_.chat.id, "I joined this group for playing music in VC"
                     )
                     await lel.edit(
-                        "<b>helper userbot joined your chat</b>",
+                        "<b>@IGRISMUSIC joined your chat</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -1103,7 +1103,7 @@ async def jiosaavn(client: Client, message_: Message):
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            "<i> helper Userbot not in this chat, Ask admin to send /play command for first time or add assistant manually</i>"
+            "<i> @IGRISMUSIC not in this chat, Ask admin to send /playm command for first time or add @IGRISMUSIC manually</i>"
         )
         return
     requested_by = message_.from_user.first_name
@@ -1123,7 +1123,7 @@ async def jiosaavn(client: Client, message_: Message):
         sthumb = songs.result[0].image
         sduration = int(songs.result[0].duration)
     except Exception as e:
-        await res.edit("Found Literally Nothing!, You Should Work On Your English.")
+        await res.edit("Found Literally Nothing!")
         print(str(e))
         return
     try:    
@@ -1250,7 +1250,7 @@ async def lol_cb(b, cb):
             ],
             [
                 InlineKeyboardButton(text="YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Download", url=f"{dlurl}"),
+                InlineKeyboardButton(text="Support", url=f"https://t.me/IGRISBOTSUPPORT"),
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
