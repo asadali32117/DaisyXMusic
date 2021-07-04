@@ -4,8 +4,11 @@ import requests
 import aiohttp
 import youtube_dl
 
+from DaisyXMusic.config import API_HASH
+from DaisyXMusic.config import API_ID
+from DaisyXMusic.config import BG_IMAGE
+from DaisyXMusic.config import BOT_TOKEN
 from pyrogram import filters
-from DaisyXMusic import bot as pgram 
 from youtube_search import YoutubeSearch
 
 
