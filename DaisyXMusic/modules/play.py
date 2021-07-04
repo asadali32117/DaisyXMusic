@@ -628,62 +628,10 @@ async def play(_, message: Message):
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         
         try:
-          results = YoutubeSearch(query, max_results=5).to_dict()
+          results = YoutubeSearch(query, max_results=1).to_dict()
         except:
           await lel.edit("Give me something to play")
         # Looks like hell. Aren't it?? FUCK OFF
-        try:
-            toxxt = "**Select the song you want to play**\n\n"
-            j = 0
-            useer=user_name
-            emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣",]
-
-            while j < 5:
-                toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
-                toxxt += f" ╚ <b>Duration</b> - {results[j]['duration']}\n"
-                toxxt += f" ╚ <b>Views</b> - {results[j]['views']}\n"
-                toxxt += f" ╚ <b>Channel</b> - {results[j]['channel']}\n\n"
-
-                j += 1            
-            koyboard = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("1️⃣", callback_data=f'plll 0|{query}|{user_id}'),
-                        InlineKeyboardButton("2️⃣", callback_data=f'plll 1|{query}|{user_id}'),
-                        InlineKeyboardButton("3️⃣", callback_data=f'plll 2|{query}|{user_id}'),
-                    ],
-                    [
-                        InlineKeyboardButton("4️⃣", callback_data=f'plll 3|{query}|{user_id}'),
-                        InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}'),
-                    ],
-                    [InlineKeyboardButton(text="❌", callback_data="cls")],
-                ]
-            )       
-            await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
-            # NO NOT ALL PEOPLE LOVE PORN (point to be noted)
-            return
-            # Returning to AnimeVoid
-        except:
-            await lel.edit("No Enough results to choose.. Starting direct play..")
-                        
-            # print(results)
-            try:
-                url = f"https://youtube.com{results[0]['url_suffix']}"
-                title = results[0]["title"][:40]
-                thumbnail = results[0]["thumbnails"][0]
-                thumb_name = f"thumb{title}.jpg"
-                thumb = requests.get(thumbnail, allow_redirects=True)
-                open(thumb_name, "wb").write(thumb.content)
-                duration = results[0]["duration"]
-                results[0]["url_suffix"]
-                views = results[0]["views"]
-
-            except Exception as e:
-                await lel.edit(
-                    "Song not found.Try another song or maybe spell it properly."
-                )
-                print(str(e))
-                return
             try:    
                 secmul, dur, dur_arr = 1, 0, duration.split(':')
                 for i in range(len(dur_arr)-1, -1, -1):
