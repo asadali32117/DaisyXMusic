@@ -5,7 +5,7 @@ import aiohttp
 import youtube_dl
 
 from pyrogram import filters
-from DaisyXMusic import pgram as bot
+from DaisyXMusic import bot as pgram 
 from youtube_search import YoutubeSearch
 
 
