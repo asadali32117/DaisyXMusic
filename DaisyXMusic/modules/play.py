@@ -452,7 +452,7 @@ async def m_cb(b, cb):
             await cb.answer("Chat is not connected!", show_alert=True)
 
 
-Client.on_message(command("play") & other_filters)
+@Client.on_message(command("playm") & other_filters)
 async def play(_, message: Message):
     global que
     global useer
@@ -483,7 +483,7 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Add me as admin of yor group first.</b>",
+                        "<b>Add me as admin of your group first.</b>",
                     )
                     return
 
@@ -509,7 +509,7 @@ async def play(_, message: Message):
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} userbot not in this chat, ask admin to send /play command for first time or add {user.first_name} manually</i>"
+            f"<i> {user.first_name} userbot not in this chat, ask admin to send /playm command for first time or add {user.first_name} manually</i>"
         )
         return
     message.from_user.id
