@@ -20,7 +20,7 @@ from pyrogram import Client
 from pyrogram import filters
 from pyrogram.types import Message
 
-from DaisyXMusic.config import que
+from DaisyXMusic.config import que, SUDO_USERS
 from DaisyXMusic.function.admins import set
 from DaisyXMusic.helpers.channelmusic import get_chat_id
 from DaisyXMusic.helpers.decorators import authorized_users_only
