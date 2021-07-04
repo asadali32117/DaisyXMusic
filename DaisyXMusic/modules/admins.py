@@ -1,3 +1,4 @@
+
 # Calls Music 1 - Telegram bot for streaming audio in group calls
 # Copyright (C) 2021  Roj Serbest
 
@@ -14,10 +15,10 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-
+import os
+import sys
 from asyncio import QueueEmpty
-from pyrogram import Client 
-from pyrogram import filters
+from pyrogram import filters, Client
 from pyrogram.types import Message
 
 from DaisyXMusic.config import que, SUDO_USERS
