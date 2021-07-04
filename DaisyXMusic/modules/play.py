@@ -626,7 +626,7 @@ async def play(_, message: Message):
         print(query)
         await lel.edit("**Searching...**")
         ydl_opts = {"format": "bestaudio[ext=m4a]" 
-        r
+
         except:
           await lel.edit("Give me something to play")
         # Looks like hell. Aren't it?? FUCK OFF
