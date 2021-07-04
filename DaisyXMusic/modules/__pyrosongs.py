@@ -6,11 +6,10 @@ import youtube_dl
 
 from DaisyXMusic.config import API_HASH
 from DaisyXMusic.config import API_ID
-from DaisyXMusic.config import BG_IMAGE
 from DaisyXMusic.config import BOT_TOKEN
 from pyrogram import filters
 from youtube_search import YoutubeSearch
-
+pgram = Client("IgrisPyro", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 def time_to_seconds(time):
     stringt = str(time)
