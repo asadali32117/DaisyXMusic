@@ -40,7 +40,7 @@ async def addchannel(client, message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "@IGRISMUSIC"
+        user.first_name = "@SenkuVc"
 
     try:
         await USER.join_chat(invitelink)
@@ -52,8 +52,8 @@ async def addchannel(client, message):
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"Couldn't Join chat cuz of heavy load! Make sure @IGRISMUSIC is not banned in group."
-            "\n\nOr manually add @IGRISMUSIC to your Group and try again</b>",
+            f"Couldn't Join chat cuz of heavy load! Make sure @SenkuVc is not banned in group."
+            "\n\nOr manually add @SenkuVc to your Group and try again</b>",
         )
         return
     await message.reply_text(
@@ -78,7 +78,7 @@ async def bye(client, message):
     if message.from_user.id in SUDO_USERS:
         left=0
         failed=0
-        lol = await message.reply("IGRISMUSIC Leaving all chats")
+        lol = await message.reply("SenkuVc Leaving all chats")
         async for dialog in USER.iter_dialogs():
             try:
                 await USER.leave_chat(dialog.chat.id)
@@ -114,7 +114,7 @@ async def addcchannel(client, message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "SenkuVc"
 
     try:
         await USER.join_chat(invitelink)
@@ -127,8 +127,8 @@ async def addcchannel(client, message):
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"Couldn't Join chat cuz of heavy load! Make sure @IGRISMUSIC is not banned in group."
-            "\n\nOr manually add @IGRISMUSIC to your Group and try again</b>",
+            f"Couldn't Join chat cuz of heavy load! Make sure @SenkuVc is not banned in group."
+            "\n\nOr manually add @SenkuVc to your Group and try again</b>",
         )
         return
     await message.reply_text(
