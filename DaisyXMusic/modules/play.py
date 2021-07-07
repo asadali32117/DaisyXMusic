@@ -186,7 +186,7 @@ def updated_stats(chat, queue, vol=100):
 
 
 def r_ply(type_):
-    if type_ == "playm":
+    if type_ == "vcplay":
         pass
     else:
         pass
@@ -316,7 +316,7 @@ async def p_cb(b, cb):
 
 
 @Client.on_callback_query(
-    filters.regex(pattern=r"^(playm|pause|skip|leave|puse|resume|menu|cls)$")
+    filters.regex(pattern=r"^(vcplay|pause|skip|leave|puse|resume|menu|cls)$")
 )
 @cb_admin_check
 async def m_cb(b, cb):
@@ -452,20 +452,20 @@ async def m_cb(b, cb):
             await cb.answer("Chat is not connected!", show_alert=True)
 
 
-@Client.on_message(command("playm") & other_filters)
+@Client.on_message(command("vcplay") & other_filters)
 async def play(_, message: Message):
     global que
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return 
-    lel = await message.reply("🔄 **Processing**")
+    lel = await message.reply("💿 **Processing**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "IGRISMUSIC"
+        user.first_name = "SenkuVc"
     usar = user
     wew = usar.id
     try:
@@ -509,7 +509,7 @@ async def play(_, message: Message):
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} userbot not in this chat, ask admin to send /playm command for first time or add {user.first_name} manually</i>"
+            f"<i> {user.first_name} userbot not in this chat, ask admin to send /vcplay command for first time or add {user.first_name} manually</i>"
         )
         return
     message.from_user.id
@@ -570,7 +570,7 @@ async def play(_, message: Message):
         )
     elif urls:
         query = toxt
-        await lel.edit("🎵 **Processing**")
+        await lel.edit("💿 **Processing**")
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -614,7 +614,7 @@ async def play(_, message: Message):
         for i in message.command[1:]:
             query += " " + str(i)
         print(query)
-        await lel.edit("🎵 **Processing**")
+        await lel.edit("💿 **Processing**")
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         
         try:
@@ -694,19 +694,19 @@ async def play(_, message: Message):
         return await lel.delete()
 
 
-@Client.on_message(filters.command("ytplaym") & filters.group & ~filters.edited)
+@Client.on_message(filters.command("vcplay") & filters.group & ~filters.edited)
 async def ytplay(_, message: Message):
     global que
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔄 <b>Processing</b>")
+    lel = await message.reply("💿 <b>Processing</b>")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "IGRISMUSIC"
+        user.first_name = "SenkuVc"
     usar = user
     wew = usar.id
     try:
@@ -734,7 +734,7 @@ async def ytplay(_, message: Message):
                         message.chat.id, "I joined this group for playing music in VC"
                     )
                     await lel.edit(
-                        "<b>@IGRISMUSIC joined your chat</b>",
+                        "<b>@SenkuVc joined your chat</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -742,8 +742,8 @@ async def ytplay(_, message: Message):
                 except Exception:
                     # print(e)
                     await lel.edit(
-                        f"Couldn't Join chat cuz of heavy load, Make sure @IGRISMUSIC is not banned in group."
-                        "\n\nOr manually add @IGRISMUSIC to your Group and try again</b>",
+                        f"Couldn't Join chat cuz of heavy load, Make sure @SenkuVc is not banned in group."
+                        "\n\nOr manually add @SenkuVC to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
@@ -762,7 +762,7 @@ async def ytplay(_, message: Message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    await lel.edit("🎵 <b>Processing</b>")
+    await lel.edit("💿 <b>Processing</b>")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -803,7 +803,7 @@ async def ytplay(_, message: Message):
             ],
             [
                 InlineKeyboardButton(text="YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Support", url=f"https://t.me/IGRISBOTSUPPORT"),
+                InlineKeyboardButton(text="Support", url=f"https://t.me/myawesomebot21"),
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
@@ -856,13 +856,13 @@ async def deezer(client: Client, message_: Message):
     if message_.chat.id in DISABLED_GROUPS:
         return
     global que
-    lel = await message_.reply("🔄 <b>Processing</b>")
+    lel = await message_.reply("💿 <b>Processing</b>")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "@IGRISMUSIC"
+        user.first_name = "@SenkuVc"
     usar = user
     wew = usar.id
     try:
@@ -890,7 +890,7 @@ async def deezer(client: Client, message_: Message):
                         message_.chat.id, "I joined this group for playing music in VC"
                     )
                     await lel.edit(
-                        "<b>@IGRISMUSIC joined your chat</b>",
+                        "<b>@SenkuVc joined your chat</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -898,15 +898,15 @@ async def deezer(client: Client, message_: Message):
                 except Exception:
                     # print(e)
                     await lel.edit(
-                      f"Couldn't Join chat cuz of heavy load, Make sure @IGRISMUSIC is not banned in group."
-                        "\n\nOr manually add @IGRISMUSIC to your Group and try again</b>",
+                      f"Couldn't Join chat cuz of heavy load, Make sure @SenkuVc is not banned in group."
+                        "\n\nOr manually add @SenkuVc to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} not in this chat, Ask admin to send /playm command for first time or add {user.first_name} manually</i>"
+            f"<i> {user.first_name} not in this chat, Ask admin to send /vcplay command for first time or add {user.first_name} manually</i>"
         )
         return
     requested_by = message_.from_user.first_name
@@ -1000,7 +1000,7 @@ async def jiosaavn(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "@IGRISMUSIC"
+        user.first_name = "@Senkuvc"
     usar = user
     wew = usar.id
     try:
@@ -1028,7 +1028,7 @@ async def jiosaavn(client: Client, message_: Message):
                         message_.chat.id, "I joined this group for playing music in VC"
                     )
                     await lel.edit(
-                        "<b>@IGRISMUSIC joined your chat</b>",
+                        "<b>@Senkuvc joined your chat</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -1036,15 +1036,15 @@ async def jiosaavn(client: Client, message_: Message):
                 except Exception:
                     # print(e)
                     await lel.edit(
-                        f"Couldn't Join chat cuz of heavy load, Make sure @IGRISMUSIC is not banned in group."
-                        "\n\nOr manually add @IGRISMUSIC to your Group and try again</b>",
+                        f"Couldn't Join chat cuz of heavy load, Make sure @SenkuVc is not banned in group."
+                        "\n\nOr manually add @SenkuVc to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            "<i> @IGRISMUSIC not in this chat, Ask admin to send /playm command for first time or add @IGRISMUSIC manually</i>"
+            "<i> @SenkuVc not in this chat, Ask admin to send /vcplay command for first time or add @SenkuVc manually</i>"
         )
         return
     requested_by = message_.from_user.first_name
@@ -1191,7 +1191,7 @@ async def lol_cb(b, cb):
             ],
             [
                 InlineKeyboardButton(text="YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Support", url=f"https://t.me/IGRISBOTSUPPORT"),
+                InlineKeyboardButton(text="Support", url=f"https://t.me/myawesomebot21"),
             ],
             [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
         ]
